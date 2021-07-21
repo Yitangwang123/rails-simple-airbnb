@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-between">
+  <div>
+    <h2>Simple Airbn</h2>
+  </div>
+  <div>
+    <%= link_to "Add flat", new_flat_path %>
+  </div>
+</div>
+
+
+
+<h1>All our flats(<%= @flats.count.to_i %>)</h1>
+
+
+<% @flats.each do |flat| %>
+  <h2><%= link_to "#{flat.name}", flat_path(flat) %></h2>
+  <p><%= flat.address %></p>
+  <p><%= flat.number_of_guests %></p>
+  <p><%= flat.price_per_night%></p>
+  <%= link_to "More info", flat_path(flat) %>
+  <%= link_to "Edit", edit_flat_path(flat) %>
+  <%= link_to "Remove",
+            flat_path(flat),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
