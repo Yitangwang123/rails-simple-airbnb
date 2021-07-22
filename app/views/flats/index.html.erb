@@ -1,11 +1,29 @@
-<div class="container d-flex justify-content-between">
-  <div>
-    <h2>Simple Airbn</h2>
-  </div>
-  <div>
-    <%= link_to "Add flat", new_flat_path %>
+<!-- <div class="banner px-1">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <h2><%= link_to "Simple Airbnb", flats_path %></h2>
+    </div>
+    <div>
+      <%= link_to "Add flat", new_flat_path %>
+    </div>
+</div>
+</div> -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-title" href="#">
+    <h2><%= link_to "Simple Airbnb", flats_path %></h2>
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Add flat", new_flat_path %>
+      </li>
+    </ul>
   </div>
 </div>
+
 
 
 
@@ -14,6 +32,7 @@
 
 <% @flats.each do |flat| %>
   <h2><%= link_to "#{flat.name}", flat_path(flat) %></h2>
+  <p><%= flat.picture_url %></p>
   <p><%= flat.address %></p>
   <p><%= flat.number_of_guests %></p>
   <p><%= flat.price_per_night%></p>

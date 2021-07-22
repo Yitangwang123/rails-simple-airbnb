@@ -1,0 +1,16 @@
+
+
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :picture_url %>
+  <%= f.input :description %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :price_per_night  %>
+  <% if flat.new_record? %>
+    <%= f.submit "Create", class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit "Edit", class: 'btn btn-primary'%>
+  <% end %>
+  <%= link_to "Cancel", :back, {:class=>"btn btn-warning"} %>
+<% end %>
